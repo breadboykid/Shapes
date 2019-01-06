@@ -1,28 +1,25 @@
 package twodimentionalshapes;
 
-public class Circle extends Shape implements Actions{
+public class Circle extends Shape{
 
     double radius;
-    public final int SIDES = 1;
-    public final int SIDES_REQUIRED = 1;
+    private static final int SIDES = 1;
+    private static final int SIDES_REQUIRED = 1;
 
-    public Circle(){
-        super("Circle");
+    public Circle() {
+        super("Circle", SIDES, SIDES_REQUIRED);
     }
 
-    public double getArea(){
-        return Math.pow(radius, 2)*(Math.PI);
+    public double getArea() {
+        return Math.pow(radius, 2) * (Math.PI);
     }
 
-    public double getPerimeter(){
-        return (2*Math.PI*radius);
+    public double getPerimeter() {
+        return (2 * Math.PI * radius);
     }
 
-    public int getNumberOfSides(){
-        return SIDES;
-    }
-
-    public int getNumberOfSidesNeeded(){
-        return SIDES_REQUIRED;
+    public void setLengths(){
+        System.out.println("Please enter Circle radius:");
+        this.radius = scan.nextInt();
     }
 }
