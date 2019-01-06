@@ -9,6 +9,20 @@ public class Main{
     public static void main(String[] args){
         System.out.println("Welcome to my program");
 
+        boolean isNotValidDimension = true;
+        String answer;
+
+        while(isNotValidDimension){
+            System.out.println("Would you like to analyse a 2D or 3D shape:");
+            answer = scan.nextLine();
+
+            switch(answer.trim().toLowerCase()){
+                case "3d":
+
+            }
+        }
+
+
         boolean isNotValidShape = true;
 
         while(isNotValidShape){
@@ -35,7 +49,9 @@ public class Main{
             }
         }
 
+        obj.setLengths();
         System.out.println("Perimeter = " + obj.getPerimeter() + "\nArea = " + obj.getArea());
-        obj.getLengths();
+        System.out.println("Shape sides = " + obj.SIDES);
+
     }
 }
