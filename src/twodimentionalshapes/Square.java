@@ -6,19 +6,19 @@ public class Square extends TwoDimShape {
     private static final int SIDES = 4;
     private static final int SIDES_REQUIRED = 1;
 
-    public Square() {
+    protected Square() {
         super("Square", SIDES, SIDES_REQUIRED);
     }
 
-    public double getArea() {
+    protected double getArea() {
         return Math.pow(length, 2);
     }
 
-    public double getPerimeter() {
+    protected double getPerimeter() {
         return (length * 4);
     }
 
-    public void setLengths() {
+    protected void setLengths() {
         System.out.println("Please enter length of square:");
         this.length = scan.nextDouble();
     }
