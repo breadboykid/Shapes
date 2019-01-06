@@ -1,15 +1,13 @@
 package twodimentionalshapes;
 
-import java.util.Scanner;
-
-public class Square extends Shape implements Actions {
+public class Square extends Shape{
 
     double length;
-    public static final int SIDES = 4;
-    public static final int SIDES_REQUIRED = 1;
+    private static final int SIDES = 4;
+    private static final int SIDES_REQUIRED = 1;
 
     public Square() {
-        super("Square");
+        super("Square", SIDES, SIDES_REQUIRED);
     }
 
     public double getArea() {
@@ -20,14 +18,10 @@ public class Square extends Shape implements Actions {
         return (length * 4);
     }
 
-    public int getNumberOfSides(){
-        return SIDES;
+    public void setLengths(){
+        System.out.println("Please enter length of square:");
+        this.length = scan.nextInt();
     }
-
-    public int getNumberOfSidesNeeded(){
-        return SIDES_REQUIRED;
-    }
-
 
 }
 
