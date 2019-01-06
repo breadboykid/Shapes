@@ -1,28 +1,27 @@
 package twodimentionalshapes;
 
-public class Rectangle extends Shape implements Actions{
+public class Rectangle extends Shape{
 
     double length, width;
-    public final int SIDES = 4;
-    public final int SIDES_REQUIRED = 2;
+    private static final int SIDES = 4;
+    private static final int SIDES_REQUIRED = 2;
 
-    public Rectangle(){
-        super("Rectangle");
+    public Rectangle() {
+        super("Rectangle", SIDES, SIDES_REQUIRED);
     }
 
-    public double getArea(){
-        return (length*width);
+    public double getArea() {
+        return (length * width);
     }
 
-    public double getPerimeter(){
-        return ((length+width)*2);
+    public double getPerimeter() {
+        return ((length + width) * 2);
     }
 
-    public int getNumberOfSides(){
-        return SIDES;
-    }
-
-    public int getNumberOfSidesNeeded(){
-        return SIDES_REQUIRED;
+    public void setLengths(){
+        System.out.println("Please enter Rectangle length:");
+        this.length = scan.nextInt();
+        System.out.println("Please enter Rectangle width:");
+        this.width = scan.nextInt();
     }
 }
