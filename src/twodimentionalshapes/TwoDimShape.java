@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public abstract class TwoDimShape {
 
-    public static Scanner scan = new Scanner(System.in);
+    protected static Scanner scan = new Scanner(System.in);
     static TwoDimShape obj;
 
     String shapeName;
-    public static int SIDES, SIDES_REQUIRED;
+    protected static int SIDES, SIDES_REQUIRED;
 
     TwoDimShape(String name, int newSide, int newRequiredLengths) {
         this.shapeName = name;
@@ -47,9 +47,9 @@ public abstract class TwoDimShape {
         System.out.println("Shape sides = " + obj.SIDES);
     }
 
-    abstract public double getArea();
+    abstract protected double getArea();
 
-    abstract public double getPerimeter();
+    abstract protected double getPerimeter();
 
-    abstract public void setLengths();
+    abstract protected void setLengths();
 }

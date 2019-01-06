@@ -10,15 +10,15 @@ public class Circle extends TwoDimShape {
         super("Circle", SIDES, SIDES_REQUIRED);
     }
 
-    public double getArea() {
+    protected double getArea() {
         return Math.pow(radius, 2) * (Math.PI);
     }
 
-    public double getPerimeter() {
+    protected double getPerimeter() {
         return (2 * Math.PI * radius);
     }
 
-    public void setLengths() {
+    protected void setLengths() {
         System.out.println("Please enter Circle radius:");
         this.radius = scan.nextDouble();
     }

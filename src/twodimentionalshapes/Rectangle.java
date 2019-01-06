@@ -6,19 +6,19 @@ public class Rectangle extends TwoDimShape {
     private static final int SIDES = 4;
     private static final int SIDES_REQUIRED = 2;
 
-    public Rectangle() {
+    protected Rectangle() {
         super("Rectangle", SIDES, SIDES_REQUIRED);
     }
 
-    public double getArea() {
+    protected double getArea() {
         return (length * width);
     }
 
-    public double getPerimeter() {
+    protected double getPerimeter() {
         return ((length + width) * 2);
     }
 
-    public void setLengths() {
+    protected void setLengths() {
         System.out.println("Please enter Rectangle length:");
         this.length = scan.nextDouble();
         System.out.println("Please enter Rectangle width:");
