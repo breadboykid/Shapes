@@ -1,57 +1,62 @@
 import twodimentionalshapes.*;
+import threedimensionalshapes.*;
+
 import java.util.Scanner;
 
-public class Main{
+public class Main {
 
     private static Scanner scan = new Scanner(System.in);
-    static Shape obj;
 
-    public static void main(String[] args){
-        System.out.println("Welcome to my program");
+    private static boolean playAgain() {
+        System.out.println("\nWould you like to play again? Y/N:");
+        char c = scan.nextLine().toLowerCase().charAt(0);
+        if (c == 'n') {
+            return false;
+        } else if (c == 'y') {
+            return true;
+        }
+        System.out.println("Invalid response, try again");
+        return playAgain();
+    }
 
-        boolean isNotValidDimension = true;
-        String answer;
+    private static boolean isValidDimension(String dimensionCheck) {
+        if (dimensionCheck.equals("2d") || dimensionCheck.equals("3d")) {
+            return true;
+        }
+        System.out.println("Invalid dimension, try again.");
+        return false;
+    }
 
-        while(isNotValidDimension){
-            System.out.println("Would you like to analyse a 2D or 3D shape:");
-            answer = scan.nextLine();
+    private static void playShape(String s) {
+        if (s.equals("2d")) {
+            TwoDimShape.play();
+        } else {
+            ThreeDimShape.play();
+        }
+    }
 
-            switch(answer.trim().toLowerCase()){
-                case "3d":
+    public static void main(String[] args) {
+        boolean play;
+
+        do {
+            System.out.println("Welcome to my program");
+
+            boolean isValidAnswer = false;
+            String answer = "";
+
+
+            while (!isValidAnswer) {
+                System.out.println("Would you like to analyse a 2D or 3D shape:");
+                answer = scan.nextLine().trim().toLowerCase();
+                isValidAnswer = isValidDimension(answer);
 
             }
-        }
 
+            playShape(answer);
+            play = playAgain();
 
-        boolean isNotValidShape = true;
-
-        while(isNotValidShape){
-            System.out.println("Please enter a shape:");
-
-            String shape = scan.nextLine();
-            System.out.println(shape);
-
-            switch(shape.trim().toLowerCase()) {
-                case "circle":
-                    obj = new Circle();
-                    isNotValidShape = false;
-                    break;
-                case "square":
-                    obj = new Square();
-                    isNotValidShape = false;
-                    break;
-                case "rectangle":
-                    obj = new Rectangle();
-                    isNotValidShape = false;
-                    break;
-                default:
-                    System.out.println("Invalid Shape");
-            }
-        }
-
-        obj.setLengths();
-        System.out.println("Perimeter = " + obj.getPerimeter() + "\nArea = " + obj.getArea());
-        System.out.println("Shape sides = " + obj.SIDES);
-
+            System.out.println();
+        } while (play == true);
+        System.out.println("User ended program.");
     }
 }
