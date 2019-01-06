@@ -1,6 +1,6 @@
 package twodimentionalshapes;
 
-public class Square extends Shape{
+public class Square extends TwoDimShape {
 
     double length;
     private static final int SIDES = 4;
@@ -18,9 +18,9 @@ public class Square extends Shape{
         return (length * 4);
     }
 
-    public void setLengths(){
+    public void setLengths() {
         System.out.println("Please enter length of square:");
-        this.length = scan.nextInt();
+        this.length = scan.nextDouble();
     }
 
 }

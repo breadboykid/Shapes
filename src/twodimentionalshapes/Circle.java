@@ -1,6 +1,6 @@
 package twodimentionalshapes;
 
-public class Circle extends Shape{
+public class Circle extends TwoDimShape {
 
     double radius;
     private static final int SIDES = 1;
@@ -18,8 +18,8 @@ public class Circle extends Shape{
         return (2 * Math.PI * radius);
     }
 
-    public void setLengths(){
+    public void setLengths() {
         System.out.println("Please enter Circle radius:");
-        this.radius = scan.nextInt();
+        this.radius = scan.nextDouble();
     }
 }

@@ -1,6 +1,6 @@
 package twodimentionalshapes;
 
-public class Rectangle extends Shape{
+public class Rectangle extends TwoDimShape {
 
     double length, width;
     private static final int SIDES = 4;
@@ -18,10 +18,10 @@ public class Rectangle extends Shape{
         return ((length + width) * 2);
     }
 
-    public void setLengths(){
+    public void setLengths() {
         System.out.println("Please enter Rectangle length:");
-        this.length = scan.nextInt();
+        this.length = scan.nextDouble();
         System.out.println("Please enter Rectangle width:");
-        this.width = scan.nextInt();
+        this.width = scan.nextDouble();
     }
 }
