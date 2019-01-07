@@ -2,7 +2,7 @@ package twodimentionalshapes;
 
 public class Square extends TwoDimShape {
 
-    double length;
+    protected double length;
     private static final int SIDES = 4;
     private static final int SIDES_REQUIRED = 1;
 

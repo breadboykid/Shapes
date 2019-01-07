@@ -23,7 +23,6 @@ public abstract class TwoDimShape {
             System.out.println("Please enter a shape:");
 
             String shape = scan.nextLine();
-            System.out.println(shape);
 
             switch (shape.trim().toLowerCase()) {
                 case "circle":
@@ -43,8 +42,7 @@ public abstract class TwoDimShape {
             }
         }
         obj.setLengths();
-        System.out.println("Perimeter = " + obj.getPerimeter() + "\nArea = " + obj.getArea());
-        System.out.println("Shape sides = " + obj.SIDES);
+        System.out.printf("\nShape Chosen: %s\nPerimeter = %f\nArea = %f\nShape Sides = %d", obj.shapeName, obj.getPerimeter(), obj.getArea(), obj.SIDES);
     }
 
     abstract protected double getArea();

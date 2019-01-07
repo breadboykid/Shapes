@@ -2,7 +2,7 @@ package twodimentionalshapes;
 
 public class Rectangle extends TwoDimShape {
 
-    double length, width;
+    protected double length, width;
     private static final int SIDES = 4;
     private static final int SIDES_REQUIRED = 2;
 
