@@ -2,9 +2,9 @@ package twodimentionalshapes;
 
 public class Circle extends TwoDimShape {
 
-    double radius;
+    protected double radius;
     private static final int SIDES = 1;
-    private static final int SIDES_REQUIRED = 1;
+    private static final int SIDES_REQUIRED = 0;
 
     public Circle() {
         super("Circle", SIDES, SIDES_REQUIRED);
