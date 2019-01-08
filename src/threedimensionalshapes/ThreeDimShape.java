@@ -34,6 +34,10 @@ public abstract class ThreeDimShape {
                     obj = new Cube();
                     isNotValidShape = false;
                     break;
+                case "cuboid":
+                    obj = new Cuboid();
+                    isNotValidShape = false;
+                    break;
                 default:
                     System.out.println("Invalid Shape");
             }
